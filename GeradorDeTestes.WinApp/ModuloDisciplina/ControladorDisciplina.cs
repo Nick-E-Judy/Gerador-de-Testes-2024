@@ -35,9 +35,9 @@ namespace GeradorDeTestes.WinApp.ModuloDisciplina
 
             CarregarDisciplinas();
 
-            //TelaPrincipalForm
-            //    .Instancia
-            //    .AtualizarRodape($"O registro \"{novaDisciplina.Nome}\" foi criado com sucesso!");
+            TelaPrincipalForm
+                .Instancia
+                .AtualizarRodape($"O registro \"{novaDisciplina.Nome}\" foi criado com sucesso!");
         }
 
         public override void Editar()
@@ -73,9 +73,9 @@ namespace GeradorDeTestes.WinApp.ModuloDisciplina
 
             CarregarDisciplinas();
 
-            //TelaPrincipalForm
-            //    .Instancia
-            //    .AtualizarRodape($"O registro \"{disciplinaEditada.Nome}\" foi editado com sucesso!");
+            TelaPrincipalForm
+                .Instancia
+                .AtualizarRodape($"O registro \"{disciplinaEditada.Nome}\" foi editado com sucesso!");
         }
 
         public override void Excluir()
@@ -110,9 +110,9 @@ namespace GeradorDeTestes.WinApp.ModuloDisciplina
 
             CarregarDisciplinas();
 
-            //TelaPrincipalForm
-            //    .Instancia
-            //    .AtualizarRodape($"O registro \"{disciplinaSelecionada.Nome}\" foi excluído com sucesso!");
+            TelaPrincipalForm
+                .Instancia
+                .AtualizarRodape($"O registro \"{disciplinaSelecionada.Nome}\" foi excluído com sucesso!");
         }
 
         private void CarregarDisciplinas()

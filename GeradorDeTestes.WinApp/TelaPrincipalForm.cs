@@ -1,10 +1,15 @@
 using GeradorDeTestes.WinApp.Compartilhado;
+using GeradorDeTestes.WinApp.ModuloDisciplina;
 
 namespace GeradorDeTestes.WinApp
 {
     public partial class TelaPrincipalForm : Form
     {
         ControladorBase controlador;
+
+        ContextoDados contexto;
+
+        IRepositorioDisciplina repositorioDisciplina;
 
         public static TelaPrincipalForm Instancia { get; private set; }
 
@@ -14,6 +19,10 @@ namespace GeradorDeTestes.WinApp
             lblTipoCadastro.Text = string.Empty;
 
             Instancia = this;
+
+            contexto = new ContextoDados(carregarDados: true);
+
+            repositorioDisciplina = new RepositorioDisciplinaEmArquivo(contexto);
         }
 
         public void AtualizarRodape(string texto)
@@ -23,6 +32,7 @@ namespace GeradorDeTestes.WinApp
 
         private void disciplinasMenuItem_Click(object sender, EventArgs e)
         {
+            controlador = new ControladorDisciplina(repositorioDisciplina);
             ConfigurarTelaPrincipal(controlador);
         }
 
@@ -66,8 +76,8 @@ namespace GeradorDeTestes.WinApp
 
         private void ConfigurarToolBox(ControladorBase controladorSelecionado)
         {
-            btnAdicionar.Enabled = controladorSelecionado is ControladorBase;
             btnEditar.Enabled = controladorSelecionado is ControladorBase;
+            btnAdicionar.Enabled = controladorSelecionado is ControladorBase;
             btnExcluir.Enabled = controladorSelecionado is ControladorBase;
 
             ConfigurarToolTips(controladorSelecionado);
@@ -75,8 +85,8 @@ namespace GeradorDeTestes.WinApp
 
         private void ConfigurarToolTips(ControladorBase controladorSelecionado)
         {
-            btnAdicionar.ToolTipText = controladorSelecionado.ToolTipAdicionar;
-            btnEditar.ToolTipText = controladorSelecionado.ToolTipEditar;
+            btnEditar.ToolTipText = controladorSelecionado.ToolTipAdicionar;
+            btnAdicionar.ToolTipText = controladorSelecionado.ToolTipEditar;
             btnExcluir.ToolTipText = controladorSelecionado.ToolTipExcluir;
         }
 

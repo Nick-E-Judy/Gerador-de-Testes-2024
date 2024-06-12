@@ -2,7 +2,7 @@
 {
     public partial class TelaDisciplinaForm : Form
     {
-      
+
         private Disciplina disciplina;
         public Disciplina Disciplina
         {
@@ -32,10 +32,11 @@
 
             if (erros.Count > 0)
             {
-               // TelaPrincipalForm.Instancia.AtualizarRodape(erros[0]);
+                TelaPrincipalForm.Instancia.AtualizarRodape(erros[0]);
 
                 DialogResult = DialogResult.None;
             }
         }
+
     }
 }
