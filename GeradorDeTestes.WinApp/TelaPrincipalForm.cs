@@ -1,3 +1,5 @@
+using GeradorDeTestes.WinApp.Compartilhado;
+
 namespace GeradorDeTestes.WinApp
 {
     public partial class TelaPrincipalForm : Form
