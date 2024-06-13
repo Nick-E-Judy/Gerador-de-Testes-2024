@@ -3,13 +3,14 @@ using System.Text.Json;
 using System.Drawing.Drawing2D;
 using static System.Net.Mime.MediaTypeNames;
 using GeradorDeTestes.WinApp.ModuloDisciplina;
+using GeradorDeTestes.WinApp.ModuloMateria;
 
 namespace GeradorDeTestes.WinApp.Compartilhado
 {
     public class ContextoDados
     {
         public List<Disciplina> Disciplinas { get; set; }
-        //public List<Materia> Materias { get; set; }
+        public List<Materia> Materias { get; set; }
         //public List<Questao> Questoes { get; set; }
         //public List<Teste> Testes { get; set; }
 
@@ -19,7 +20,7 @@ namespace GeradorDeTestes.WinApp.Compartilhado
         {
             Disciplinas = new List<Disciplina>();
 
-            //Materias = new List<Materia>();
+            Materias = new List<Materia>();
 
             //Questoes = new List<Questao>();
 
@@ -70,7 +71,7 @@ namespace GeradorDeTestes.WinApp.Compartilhado
 
             Disciplinas = ctx.Disciplinas;
 
-            //Materias = ctx.Materias;
+            Materias = ctx.Materias;
 
             //Questoes = ctx.Questoes;
 
