@@ -1,5 +1,7 @@
 ﻿using GeradorDeTestes.WinApp.Compartilhado;
+using GeradorDeTestes.WinApp.ModuloMateria;
 using System.Drawing.Drawing2D;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace GeradorDeTestes.WinApp.ModuloDisciplina
 {
@@ -7,6 +9,8 @@ namespace GeradorDeTestes.WinApp.ModuloDisciplina
     {
         private IRepositorioDisciplina repositorioDisciplina;
         private TabelaDisciplinaControl tabelaDisciplina;
+
+        private IRepositorioMateria repositorioMateria;
 
         public ControladorDisciplina(IRepositorioDisciplina repositorio)
         {
@@ -125,31 +129,7 @@ namespace GeradorDeTestes.WinApp.ModuloDisciplina
                 );
                 return;
             }
-
-            //List<Materia> materiasRelacionadas = repositorioMateria.ObterPorDisciplinaId(disciplinaSelecionada.Id);
-            //if (materiasRelacionadas.Any())
-            //{
-            //    MessageBox.Show(
-            //        "Não é possível excluir esta disciplina, pois existem matérias relacionadas.",
-            //        "Erro de Exclusão",
-            //        MessageBoxButtons.OK,
-            //        MessageBoxIcon.Warning
-            //    );
-            //    return;
-            //}
-
-            //List<Teste> testesRelacionados = repositorioTeste.ObterPorDisciplinaId(disciplinaSelecionada.Id);
-            //if (testesRelacionados.Any())
-            //{
-            //    MessageBox.Show(
-            //        "Não é possível excluir esta disciplina, pois existem testes relacionados.",
-            //        "Erro de Exclusão",
-            //        MessageBoxButtons.OK,
-            //        MessageBoxIcon.Warning
-            //    );
-            //    return;
-            //}
-
+            
             DialogResult resposta = MessageBox.Show(
                 $"Você deseja realmente excluir o registro \"{disciplinaSelecionada.Nome}\"?",
                 "Confirmar Exclusão",
@@ -185,5 +165,6 @@ namespace GeradorDeTestes.WinApp.ModuloDisciplina
 
             return tabelaDisciplina;
         }
+
     }
 }

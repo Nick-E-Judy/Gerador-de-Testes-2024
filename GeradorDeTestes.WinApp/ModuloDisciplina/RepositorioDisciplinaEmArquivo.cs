@@ -1,4 +1,5 @@
 ﻿using GeradorDeTestes.WinApp.Compartilhado;
+using GeradorDeTestes.WinApp.ModuloMateria;
 
 namespace GeradorDeTestes.WinApp.ModuloDisciplina
 {
@@ -17,15 +18,18 @@ namespace GeradorDeTestes.WinApp.ModuloDisciplina
 
         public override bool Excluir(int id)
         {
-            //Materia materia = SelecionarPorId(id);
+            Disciplina disciplina = SelecionarPorId(id);
 
-            //List<Materia> materiasRelacionadas =
-            //   contexto.Materias.FindAll(m => m.Materia.Id == materia.Id);
+            List<Materia> materiasRelacionadas = contexto.Materias.FindAll(m => m.Disciplina != null && m.Disciplina.Id == disciplina.Id);
 
-            //foreach (Materia m in materiasRelacionadas)
-            //   m.Materia = null;
+            if (materiasRelacionadas != null || materiasRelacionadas.Count > 0)
+            {
+                MessageBox.Show("Não é possível excluir a disciplina pois há matérias relacionadas.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
 
             return base.Excluir(id);
+
         }
     }
 }
