@@ -10,8 +10,6 @@ namespace GeradorDeTestes.WinApp.ModuloDisciplina
         private IRepositorioDisciplina repositorioDisciplina;
         private TabelaDisciplinaControl tabelaDisciplina;
 
-        private IRepositorioMateria repositorioMateria;
-
         public ControladorDisciplina(IRepositorioDisciplina repositorio)
         {
             repositorioDisciplina = repositorio;
