@@ -1,4 +1,5 @@
 ﻿using GeradorDeTestes.WinApp.Compartilhado;
+using System.Drawing.Drawing2D;
 
 namespace GeradorDeTestes.WinApp.ModuloDisciplina
 {
@@ -31,6 +32,22 @@ namespace GeradorDeTestes.WinApp.ModuloDisciplina
 
             Disciplina novaDisciplina = telaDisciplina.Disciplina;
 
+            List<Disciplina> disciplinas = repositorioDisciplina.SelecionarTodos();
+
+            foreach (var disciplina in disciplinas)
+            {
+                if (disciplina.Nome.ToLower() == novaDisciplina.Nome.ToLower())
+                {
+                    MessageBox.Show(
+                        "Já existe uma disciplina com este nome.",
+                        "Erro de Validação",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning
+                    );
+                    return;
+                }
+            }
+
             repositorioDisciplina.Cadastrar(novaDisciplina);
 
             CarregarDisciplinas();
@@ -42,12 +59,9 @@ namespace GeradorDeTestes.WinApp.ModuloDisciplina
 
         public override void Editar()
         {
-            TelaDisciplinaForm telaDisciplina = new TelaDisciplinaForm();
-
             int idSelecionado = tabelaDisciplina.ObterRegistroSelecionado();
 
-            Disciplina disciplinaSelecionada =
-                repositorioDisciplina.SelecionarPorId(idSelecionado);
+            Disciplina disciplinaSelecionada = repositorioDisciplina.SelecionarPorId(idSelecionado);
 
             if (disciplinaSelecionada == null)
             {
@@ -60,6 +74,7 @@ namespace GeradorDeTestes.WinApp.ModuloDisciplina
                 return;
             }
 
+            TelaDisciplinaForm telaDisciplina = new TelaDisciplinaForm();
             telaDisciplina.Disciplina = disciplinaSelecionada;
 
             DialogResult resultado = telaDisciplina.ShowDialog();
@@ -68,6 +83,22 @@ namespace GeradorDeTestes.WinApp.ModuloDisciplina
                 return;
 
             Disciplina disciplinaEditada = telaDisciplina.Disciplina;
+
+            List<Disciplina> disciplinas = repositorioDisciplina.SelecionarTodos();
+
+            foreach (var disciplina in disciplinas)
+            {
+                if (disciplina.Nome.ToLower() == disciplinaEditada.Nome.ToLower() && disciplina.Id != disciplinaSelecionada.Id)
+                {
+                    MessageBox.Show(
+                        "Já existe uma disciplina com este nome.",
+                        "Erro de Validação",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning
+                    );
+                    return;
+                }
+            }
 
             repositorioDisciplina.Editar(disciplinaSelecionada.Id, disciplinaEditada);
 
@@ -82,8 +113,7 @@ namespace GeradorDeTestes.WinApp.ModuloDisciplina
         {
             int idSelecionado = tabelaDisciplina.ObterRegistroSelecionado();
 
-            Disciplina disciplinaSelecionada =
-                repositorioDisciplina.SelecionarPorId(idSelecionado);
+            Disciplina disciplinaSelecionada = repositorioDisciplina.SelecionarPorId(idSelecionado);
 
             if (disciplinaSelecionada == null)
             {
@@ -95,6 +125,30 @@ namespace GeradorDeTestes.WinApp.ModuloDisciplina
                 );
                 return;
             }
+
+            //List<Materia> materiasRelacionadas = repositorioMateria.ObterPorDisciplinaId(disciplinaSelecionada.Id);
+            //if (materiasRelacionadas.Any())
+            //{
+            //    MessageBox.Show(
+            //        "Não é possível excluir esta disciplina, pois existem matérias relacionadas.",
+            //        "Erro de Exclusão",
+            //        MessageBoxButtons.OK,
+            //        MessageBoxIcon.Warning
+            //    );
+            //    return;
+            //}
+
+            //List<Teste> testesRelacionados = repositorioTeste.ObterPorDisciplinaId(disciplinaSelecionada.Id);
+            //if (testesRelacionados.Any())
+            //{
+            //    MessageBox.Show(
+            //        "Não é possível excluir esta disciplina, pois existem testes relacionados.",
+            //        "Erro de Exclusão",
+            //        MessageBoxButtons.OK,
+            //        MessageBoxIcon.Warning
+            //    );
+            //    return;
+            //}
 
             DialogResult resposta = MessageBox.Show(
                 $"Você deseja realmente excluir o registro \"{disciplinaSelecionada.Nome}\"?",

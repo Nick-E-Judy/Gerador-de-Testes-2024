@@ -17,13 +17,13 @@ namespace GeradorDeTestes.WinApp.ModuloDisciplina
 
         public override bool Excluir(int id)
         {
-            Disciplina disciplina = SelecionarPorId(id);
+            //Materia materia = SelecionarPorId(id);
 
-            //List<Disciplina> disciplinasRelacionados =
-            //    contexto.Disciplinas.FindAll(c => c.Disciplina.Id == disciplina.Id);
+            //List<Materia> materiasRelacionadas =
+            //   contexto.Materias.FindAll(m => m.Materia.Id == materia.Id);
 
-            //foreach (Disciplina c in disciplinasRelacionados)
-            //    c.Disciplina = null;
+            //foreach (Materia m in materiasRelacionadas)
+            //   m.Materia = null;
 
             return base.Excluir(id);
         }
