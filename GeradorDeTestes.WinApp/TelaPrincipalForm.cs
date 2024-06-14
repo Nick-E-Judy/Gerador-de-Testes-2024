@@ -50,7 +50,7 @@ namespace GeradorDeTestes.WinApp
 
         private void questoesMenuItem_Click(object sender, EventArgs e)
         {
-            controlador = new ControladorQuestao(repositorioQuestao);
+            controlador = new ControladorQuestao(repositorioQuestao, repositorioMateria);
             ConfigurarTelaPrincipal(controlador);
         }
 

@@ -17,8 +17,12 @@ namespace GeradorDeTestes.WinApp.ModuloQuestao
         {
             grid.Rows.Clear();
 
-            foreach (Questao c in questoes)
-                grid.Rows.Add(c.Id, c.Enunciado.ToTitleCase());
+            foreach (Questao q in questoes)
+            {
+                string alternativaCorreta = q.Alternativas.FirstOrDefault(a => a.Correto)?.Letra.ToString() ?? "-";
+
+                grid.Rows.Add(q.Id, q.Enunciado.ToTitleCase(), q.Materia.Nome, alternativaCorreta);
+            }
         }
 
         public int ObterRegistroSelecionado()
@@ -32,6 +36,8 @@ namespace GeradorDeTestes.WinApp.ModuloQuestao
                         {
                 new DataGridViewTextBoxColumn { DataPropertyName = "Id", HeaderText = "Id" },
                 new DataGridViewTextBoxColumn { DataPropertyName = "Enunciado", HeaderText = "Enunciado" },
+                new DataGridViewTextBoxColumn { DataPropertyName = "Materia", HeaderText = "Matéria" },
+                new DataGridViewTextBoxColumn { DataPropertyName = "Alternativas", HeaderText = "Alternativa correta" },
                         };
         }
     }

@@ -1,17 +1,20 @@
 ﻿using GeradorDeTestes.WinApp.Compartilhado;
 using GeradorDeTestes.WinApp.ModuloDisciplina;
+using GeradorDeTestes.WinApp.ModuloMateria;
 
 namespace GeradorDeTestes.WinApp.ModuloQuestao
 {
     public class ControladorQuestao : ControladorBase
     {
+        private IRepositorioMateria repositorioMateria;
         private IRepositorioQuestao repositorioQuestao;
         private TabelaQuestaoControl tabelaQuestao;
 
 
-        public ControladorQuestao(IRepositorioQuestao repositorio)
+        public ControladorQuestao(IRepositorioQuestao repositorioQuestao, IRepositorioMateria repositorioMateria)
         {
-            repositorioQuestao = repositorio;
+            this.repositorioQuestao = repositorioQuestao;
+            this.repositorioMateria = repositorioMateria;
         }
 
         public override string TipoCadastro { get { return "Questoes"; } }
@@ -25,6 +28,10 @@ namespace GeradorDeTestes.WinApp.ModuloQuestao
         public override void Adicionar()
         {
             TelaQuestaoForm telaQuestao = new TelaQuestaoForm();
+
+            List<Materia> materiasCadastradas = repositorioMateria.SelecionarTodos();
+
+            telaQuestao.CarregarMaterias(materiasCadastradas);
 
             DialogResult resultado = telaQuestao.ShowDialog();
 
@@ -77,6 +84,10 @@ namespace GeradorDeTestes.WinApp.ModuloQuestao
 
             TelaQuestaoForm telaQuestao = new TelaQuestaoForm();
             telaQuestao.Questao = questaoSelecionada;
+
+            List<Materia> materiasCadastradas = repositorioMateria.SelecionarTodos();
+
+            telaQuestao.CarregarMaterias(materiasCadastradas);
 
             DialogResult resultado = telaQuestao.ShowDialog();
 

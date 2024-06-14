@@ -1,5 +1,6 @@
 ﻿using GeradorDeTestes.WinApp.Compartilhado;
 using GeradorDeTestes.WinApp.ModuloDisciplina;
+using GeradorDeTestes.WinApp.ModuloQuestao;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,7 +26,16 @@ namespace GeradorDeTestes.WinApp.ModuloMateria
         {
             Materia materia = SelecionarPorId(id);
 
+            List<Questao> questoesRelacionadas = contexto.Questoes.FindAll(m => m.Materia != null && m.Materia.Id == materia.Id);
+
+            if (questoesRelacionadas != null || questoesRelacionadas.Count > 0)
+            {
+                MessageBox.Show("Não é possível excluir a matéria pois há questões relacionadas.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
             return base.Excluir(id);
+
         }
     }
 }

@@ -13,6 +13,7 @@ namespace GeradorDeTestes.WinApp.Compartilhado
         public List<Disciplina> Disciplinas { get; set; }
         public List<Materia> Materias { get; set; }
         public List<Questao> Questoes { get; set; }
+        public List<Alternativa> Alternativas { get; set; }
         //public List<Teste> Testes { get; set; }
 
         private string caminho = $"C:\\temp\\GeradorDeTestes\\dados.json";
@@ -24,6 +25,8 @@ namespace GeradorDeTestes.WinApp.Compartilhado
             Materias = new List<Materia>();
 
             Questoes = new List<Questao>();
+
+            Alternativas = new List<Alternativa>();
 
             //Testes = new List<Teste>();
 
@@ -75,6 +78,8 @@ namespace GeradorDeTestes.WinApp.Compartilhado
             Materias = ctx.Materias;
 
             Questoes = ctx.Questoes;
+
+            Alternativas = ctx.Alternativas;
 
             //Testes = ctx.Testes;
 
