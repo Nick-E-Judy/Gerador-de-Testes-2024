@@ -5,6 +5,7 @@ using static System.Net.Mime.MediaTypeNames;
 using GeradorDeTestes.WinApp.ModuloDisciplina;
 using GeradorDeTestes.WinApp.ModuloMateria;
 using GeradorDeTestes.WinApp.ModuloQuestao;
+using GeradorDeTestes.WinApp.ModuloTeste;
 
 namespace GeradorDeTestes.WinApp.Compartilhado
 {
@@ -14,7 +15,7 @@ namespace GeradorDeTestes.WinApp.Compartilhado
         public List<Materia> Materias { get; set; }
         public List<Questao> Questoes { get; set; }
         public List<Alternativa> Alternativas { get; set; }
-        //public List<Teste> Testes { get; set; }
+        public List<Teste> Testes { get; set; }
 
         private string caminho = $"C:\\temp\\GeradorDeTestes\\dados.json";
 
@@ -28,7 +29,7 @@ namespace GeradorDeTestes.WinApp.Compartilhado
 
             Alternativas = new List<Alternativa>();
 
-            //Testes = new List<Teste>();
+            Testes = new List<Teste>();
 
         }
 
@@ -81,7 +82,7 @@ namespace GeradorDeTestes.WinApp.Compartilhado
 
             Alternativas = ctx.Alternativas;
 
-            //Testes = ctx.Testes;
+            Testes = ctx.Testes;
 
         }
     }
