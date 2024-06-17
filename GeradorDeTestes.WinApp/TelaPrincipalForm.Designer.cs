@@ -213,10 +213,13 @@
             Controls.Add(pnlRegistros);
             Controls.Add(toolStrip1);
             Controls.Add(menuStrip1);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
             MainMenuStrip = menuStrip1;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "TelaPrincipalForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Tela Principal";
+            Text = "Festas Infantis";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             toolStrip1.ResumeLayout(false);

@@ -10,7 +10,10 @@ namespace GeradorDeTestes.WinApp.ModuloTeste
             InitializeComponent();
             lblTituloTeste.Text = testeSelecionado.Titulo;
             lblNomeDisciplina.Text = testeSelecionado.Disciplina.Nome;
-            lblNomeMateria.Text = testeSelecionado.Materia.ToString();
+            if (testeSelecionado.Materia != null)
+                lblNomeMateria.Text = testeSelecionado.Materia.ToString();
+            else
+                lblNomeMateria.Text = "Recuperação";
 
             CarregarQuestoes(testeSelecionado);
         }

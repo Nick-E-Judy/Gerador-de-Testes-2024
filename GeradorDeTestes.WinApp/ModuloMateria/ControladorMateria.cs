@@ -60,12 +60,9 @@ namespace GeradorDeTestes.WinApp.ModuloMateria
 
             if (materiaSelecionada == null)
             {
-                MessageBox.Show(
-                    "Não é possível realizar esta ação sem um registro selecionado.",
-                    "Aviso",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning
-                );
+                TelaPrincipalForm
+                    .Instancia
+                    .AtualizarRodape($"Não é possível realizar esta ação sem um registro selecionado.");
                 return;
             }
 
@@ -106,12 +103,9 @@ namespace GeradorDeTestes.WinApp.ModuloMateria
 
             if (materiaSelecionada == null)
             {
-                MessageBox.Show(
-                    "Não é possível realizar esta ação sem um registro selecionado.",
-                    "Aviso",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning
-                );
+                TelaPrincipalForm
+                    .Instancia
+                    .AtualizarRodape($"Não é possível realizar esta ação sem um registro selecionado.");
                 return;
             }
 
@@ -156,12 +150,9 @@ namespace GeradorDeTestes.WinApp.ModuloMateria
             {
                 if (materia.Nome.ToLower() == materiaRecebida.Nome.ToLower())
                 {
-                    MessageBox.Show(
-                        "Já existe uma materia com este nome.",
-                        "Erro de Validação",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning
-                    );
+                    TelaPrincipalForm
+                        .Instancia
+                        .AtualizarRodape($"Já existe uma materia com este nome.");
                     return;
                 }
             }

@@ -40,9 +40,9 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 11.25F);
-            label1.Location = new Point(83, 44);
+            label1.Location = new Point(73, 33);
             label1.Name = "label1";
-            label1.Size = new Size(32, 25);
+            label1.Size = new Size(25, 20);
             label1.TabIndex = 0;
             label1.Text = "Id:";
             // 
@@ -50,37 +50,38 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 11.25F);
-            label2.Location = new Point(43, 99);
+            label2.Location = new Point(38, 74);
             label2.Name = "label2";
-            label2.Size = new Size(72, 25);
+            label2.Size = new Size(57, 20);
             label2.TabIndex = 1;
             label2.Text = "Nome: ";
             // 
             // txtId
             // 
             txtId.Enabled = false;
-            txtId.Location = new Point(121, 45);
+            txtId.Location = new Point(106, 34);
+            txtId.Margin = new Padding(3, 2, 3, 2);
             txtId.Name = "txtId";
-            txtId.Size = new Size(105, 27);
+            txtId.Size = new Size(92, 23);
             txtId.TabIndex = 2;
             txtId.Text = "0";
             // 
             // txtNome
             // 
-            txtNome.Location = new Point(121, 97);
+            txtNome.Location = new Point(106, 73);
+            txtNome.Margin = new Padding(3, 2, 3, 2);
             txtNome.Name = "txtNome";
-            txtNome.Size = new Size(299, 27);
-            txtNome.TabIndex = 3;
+            txtNome.Size = new Size(262, 23);
+            txtNome.TabIndex = 0;
             // 
             // btnGravar
             // 
             btnGravar.DialogResult = DialogResult.OK;
             btnGravar.Font = new Font("Segoe UI", 11.25F);
-            btnGravar.Location = new Point(185, 146);
-            btnGravar.Margin = new Padding(3, 4, 3, 4);
+            btnGravar.Location = new Point(162, 110);
             btnGravar.Name = "btnGravar";
-            btnGravar.Size = new Size(114, 35);
-            btnGravar.TabIndex = 8;
+            btnGravar.Size = new Size(100, 26);
+            btnGravar.TabIndex = 1;
             btnGravar.Text = "Gravar";
             btnGravar.UseVisualStyleBackColor = true;
             btnGravar.Click += btnGravar_Click;
@@ -89,28 +90,31 @@
             // 
             btnCancelar.DialogResult = DialogResult.Cancel;
             btnCancelar.Font = new Font("Segoe UI", 11.25F);
-            btnCancelar.Location = new Point(306, 146);
-            btnCancelar.Margin = new Padding(3, 4, 3, 4);
+            btnCancelar.Location = new Point(268, 110);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(114, 35);
-            btnCancelar.TabIndex = 7;
+            btnCancelar.Size = new Size(100, 26);
+            btnCancelar.TabIndex = 2;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
             // 
             // TelaDisciplinaForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(482, 214);
+            ClientSize = new Size(422, 160);
             Controls.Add(btnGravar);
             Controls.Add(btnCancelar);
             Controls.Add(txtNome);
             Controls.Add(txtId);
             Controls.Add(label2);
             Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            Margin = new Padding(3, 2, 3, 2);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "TelaDisciplinaForm";
             StartPosition = FormStartPosition.CenterParent;
-            Text = "TelaDisciplinaForm";
+            Text = "Formulário de Disciplina";
             ResumeLayout(false);
             PerformLayout();
         }

@@ -29,7 +29,9 @@ namespace GeradorDeTestes.WinApp.ModuloMateria
 
             if (questoesRelacionadas.Count > 0)
             {
-                MessageBox.Show("Não é possível excluir a materia pois há questões relacionadas.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                TelaPrincipalForm
+                    .Instancia
+                    .AtualizarRodape($"Não é possível excluir a matéria pois há questões relacionadas.");
                 return false;
             }
 

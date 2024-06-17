@@ -75,7 +75,7 @@
             btnGravar.Location = new Point(284, 479);
             btnGravar.Name = "btnGravar";
             btnGravar.Size = new Size(100, 26);
-            btnGravar.TabIndex = 22;
+            btnGravar.TabIndex = 6;
             btnGravar.Text = "Gravar";
             btnGravar.UseVisualStyleBackColor = true;
             btnGravar.Click += btnGravar_Click;
@@ -87,7 +87,7 @@
             btnCancelar.Location = new Point(390, 479);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(100, 26);
-            btnCancelar.TabIndex = 21;
+            btnCancelar.TabIndex = 7;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
             // 
@@ -99,7 +99,7 @@
             cmbMateria.Margin = new Padding(3, 2, 3, 2);
             cmbMateria.Name = "cmbMateria";
             cmbMateria.Size = new Size(181, 23);
-            cmbMateria.TabIndex = 16;
+            cmbMateria.TabIndex = 3;
             // 
             // label3
             // 
@@ -137,7 +137,7 @@
             txtTitulo.Margin = new Padding(3, 2, 3, 2);
             txtTitulo.Name = "txtTitulo";
             txtTitulo.Size = new Size(380, 23);
-            txtTitulo.TabIndex = 25;
+            txtTitulo.TabIndex = 0;
             // 
             // cmbDisciplina
             // 
@@ -147,7 +147,7 @@
             cmbDisciplina.Margin = new Padding(3, 2, 3, 2);
             cmbDisciplina.Name = "cmbDisciplina";
             cmbDisciplina.Size = new Size(181, 23);
-            cmbDisciplina.TabIndex = 26;
+            cmbDisciplina.TabIndex = 1;
             cmbDisciplina.SelectedIndexChanged += cmbDisciplina_SelectedIndexChanged;
             // 
             // label5
@@ -168,7 +168,7 @@
             checkBoxRecuperacao.Margin = new Padding(3, 2, 3, 2);
             checkBoxRecuperacao.Name = "checkBoxRecuperacao";
             checkBoxRecuperacao.Size = new Size(176, 24);
-            checkBoxRecuperacao.TabIndex = 29;
+            checkBoxRecuperacao.TabIndex = 4;
             checkBoxRecuperacao.Text = "Prova de Recuperação";
             checkBoxRecuperacao.UseVisualStyleBackColor = true;
             checkBoxRecuperacao.CheckedChanged += checkBoxRecuperacao_CheckedChanged;
@@ -183,7 +183,7 @@
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(3, 2, 3, 2);
             groupBox1.Size = new Size(445, 261);
-            groupBox1.TabIndex = 30;
+            groupBox1.TabIndex = 5;
             groupBox1.TabStop = false;
             groupBox1.Text = "Questões Selecionadas";
             // 
@@ -193,7 +193,7 @@
             btnSortear.Location = new Point(17, 24);
             btnSortear.Name = "btnSortear";
             btnSortear.Size = new Size(145, 26);
-            btnSortear.TabIndex = 31;
+            btnSortear.TabIndex = 5;
             btnSortear.Text = "Sortear Questões";
             btnSortear.UseVisualStyleBackColor = true;
             btnSortear.Click += btnSortear_Click;
@@ -206,7 +206,7 @@
             listQuestoes.Margin = new Padding(3, 2, 3, 2);
             listQuestoes.Name = "listQuestoes";
             listQuestoes.Size = new Size(435, 184);
-            listQuestoes.TabIndex = 0;
+            listQuestoes.TabIndex = 89;
             // 
             // numQtdQuestoes
             // 
@@ -214,7 +214,7 @@
             numQtdQuestoes.Margin = new Padding(3, 2, 3, 2);
             numQtdQuestoes.Name = "numQtdQuestoes";
             numQtdQuestoes.Size = new Size(72, 23);
-            numQtdQuestoes.TabIndex = 31;
+            numQtdQuestoes.TabIndex = 2;
             // 
             // TelaTesteForm
             // 
@@ -235,10 +235,13 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
             Margin = new Padding(3, 2, 3, 2);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "TelaTesteForm";
             StartPosition = FormStartPosition.CenterParent;
-            Text = "Cadastro de Teste";
+            Text = "Formulário de Testes";
             groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)numQtdQuestoes).EndInit();
             ResumeLayout(false);

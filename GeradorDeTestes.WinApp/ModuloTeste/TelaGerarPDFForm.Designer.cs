@@ -40,7 +40,7 @@
             btnGerar.Location = new Point(204, 113);
             btnGerar.Name = "btnGerar";
             btnGerar.Size = new Size(100, 26);
-            btnGerar.TabIndex = 24;
+            btnGerar.TabIndex = 1;
             btnGerar.Text = "Gerar";
             btnGerar.UseVisualStyleBackColor = true;
             btnGerar.Click += btnGerar_Click;
@@ -52,7 +52,7 @@
             btnCancelar.Location = new Point(310, 113);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(100, 26);
-            btnCancelar.TabIndex = 23;
+            btnCancelar.TabIndex = 2;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
             // 
@@ -64,7 +64,7 @@
             checkBoxGabarito.Margin = new Padding(3, 2, 3, 2);
             checkBoxGabarito.Name = "checkBoxGabarito";
             checkBoxGabarito.Size = new Size(278, 24);
-            checkBoxGabarito.TabIndex = 30;
+            checkBoxGabarito.TabIndex = 0;
             checkBoxGabarito.Text = "Gerar PDF com gabarito das questões";
             checkBoxGabarito.UseVisualStyleBackColor = true;
             // 
@@ -76,9 +76,12 @@
             Controls.Add(checkBoxGabarito);
             Controls.Add(btnGerar);
             Controls.Add(btnCancelar);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "TelaGerarPDFForm";
             StartPosition = FormStartPosition.CenterParent;
-            Text = "TelaGerarPDFForm";
+            Text = "Gerar PDFs";
             ResumeLayout(false);
             PerformLayout();
         }
