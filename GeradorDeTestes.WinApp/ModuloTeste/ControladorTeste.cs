@@ -123,7 +123,6 @@ namespace GeradorDeTestes.WinApp.ModuloTeste
                 TelaPrincipalForm
                     .Instancia
                     .AtualizarRodape($"Não é possível realizar esta ação sem um registro selecionado.");
-                );
                 return;
             }
 

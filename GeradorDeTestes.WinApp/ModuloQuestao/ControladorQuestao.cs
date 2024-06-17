@@ -49,7 +49,6 @@ namespace GeradorDeTestes.WinApp.ModuloQuestao
                     TelaPrincipalForm
                         .Instancia
                         .AtualizarRodape($"Já existe uma questão com este nome.");
-                    );
                     return;
                 }
             }
