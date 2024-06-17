@@ -196,9 +196,29 @@ namespace GeradorDeTestes.WinApp.ModuloTeste
         {
             int idSelecionado = tabelaTeste.ObterRegistroSelecionado();
 
-            Teste testeSelecionado =
-                repositorioTeste.SelecionarPorId(idSelecionado);
+            Teste testeSelecionado = repositorioTeste.SelecionarPorId(idSelecionado);
 
+            if (testeSelecionado == null)
+            {
+                MessageBox.Show(
+                    "Não é possível realizar esta ação sem um registro selecionado.",
+                    "Aviso",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+                return;
+            }
+
+            TelaGerarPDFForm telaGerarPDF = new TelaGerarPDFForm(testeSelecionado, repositorioDisciplina.SelecionarTodos(), repositorioMateria.SelecionarTodos(), repositorioQuestao.SelecionarTodos());
+
+            DialogResult resultado = telaGerarPDF.ShowDialog();
+
+            if (resultado != DialogResult.OK)
+                return;
+
+            string caminho = telaGerarPDF.Caminho;
+
+            TelaPrincipalForm.Instancia.AtualizarRodape($"O arquivo foi gerado com sucesso em: {caminho}");
         }
 
         private void CarregarTestes()

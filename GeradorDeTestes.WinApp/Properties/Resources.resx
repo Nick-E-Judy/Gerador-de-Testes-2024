@@ -118,17 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="btnPDF" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnPDF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btnFiltrar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnFiltrar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btnExcluir" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnExcluir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="btnEditar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnEditar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnPDF1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnPDF1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="btnDuplicar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnDuplicar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -136,25 +130,34 @@
   <data name="btnAdicionar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnAdicionar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btnPDF1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnPDF1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btnExcluir" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnExcluir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btnConcluirItens" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnConcluirItens.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btnFiltrar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnFiltrar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="btnAdicionarItens (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnAdicionarItens (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btnAdicionarItens" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnAdicionarItens.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="btnDuplicar2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnDuplicar1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnConcluirItens" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnConcluirItens.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnVisualizar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnVisualizar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="btnDuplicar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnDuplicar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btnVisualizar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="btnPDF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnPDF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnAdicionarItens" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnAdicionarItens.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnVisualizar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnVisualizar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
