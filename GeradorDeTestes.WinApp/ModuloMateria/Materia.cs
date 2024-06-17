@@ -26,7 +26,9 @@ namespace GeradorDeTestes.WinApp.ModuloMateria
             List<string> erros = new List<string>();
 
             if (string.IsNullOrEmpty(Nome.Trim()))
-                erros.Add("O campo \"nome\" é obrigatório");
+                erros.Add("O campo \"nome\" é obrigatório");  
+            if (Disciplina == null)
+                erros.Add("O campo \"disciplina\" é obrigatório");
             if (Serie == 0)
                 erros.Add("O campo \"série\" é obrigatório");
 

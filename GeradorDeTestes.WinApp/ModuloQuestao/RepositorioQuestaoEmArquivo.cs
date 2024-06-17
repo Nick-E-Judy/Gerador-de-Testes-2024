@@ -1,5 +1,7 @@
 ﻿using GeradorDeTestes.WinApp.Compartilhado;
+using GeradorDeTestes.WinApp.ModuloDisciplina;
 using GeradorDeTestes.WinApp.ModuloMateria;
+using GeradorDeTestes.WinApp.ModuloTeste;
 
 namespace GeradorDeTestes.WinApp.ModuloQuestao
 {
@@ -18,15 +20,15 @@ namespace GeradorDeTestes.WinApp.ModuloQuestao
 
         public override bool Excluir(int id)
         {
-            //Questao questao = SelecionarPorId(id);
+            Questao questao = SelecionarPorId(id);
 
-            //List<Materia> materiasRelacionadas = contexto.Materias.FindAll(m => m.Questao != null && m.Questao.Id == questao.Id);
+            List<Teste> testesRelacionados = contexto.Testes.FindAll(t => t.Questao != null && t.Questao.Id == questao.Id);
 
-            //if (materiasRelacionadas != null || materiasRelacionadas.Count > 0)
-            //{
-            //    MessageBox.Show("Não é possível excluir a questao pois há matérias relacionadas.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    return false;
-            //}
+            if (testesRelacionados.Count > 0)
+            {
+                MessageBox.Show("Não é possível excluir a questao pois há testes relacionados.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
 
             return base.Excluir(id);
 

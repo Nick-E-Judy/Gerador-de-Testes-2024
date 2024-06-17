@@ -21,7 +21,7 @@ namespace GeradorDeTestes.WinApp.ModuloQuestao
             {
                 string alternativaCorreta = q.Alternativas.FirstOrDefault(a => a.Correto)?.Letra.ToString() ?? "-";
 
-                grid.Rows.Add(q.Id, q.Enunciado.ToTitleCase(), q.Materia.Nome, alternativaCorreta);
+                grid.Rows.Add(q.Id, q.Enunciado.ToTitleCase(), q.Materia.Nome.ToTitleCase(), alternativaCorreta);
             }
         }
 

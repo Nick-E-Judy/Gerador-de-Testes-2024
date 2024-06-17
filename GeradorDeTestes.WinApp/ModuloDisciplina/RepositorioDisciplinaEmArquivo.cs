@@ -1,5 +1,6 @@
 ﻿using GeradorDeTestes.WinApp.Compartilhado;
 using GeradorDeTestes.WinApp.ModuloMateria;
+using GeradorDeTestes.WinApp.ModuloTeste;
 
 namespace GeradorDeTestes.WinApp.ModuloDisciplina
 {
@@ -29,10 +30,17 @@ namespace GeradorDeTestes.WinApp.ModuloDisciplina
             Disciplina disciplina = SelecionarPorId(id);
 
             List<Materia> materiasRelacionadas = contexto.Materias.FindAll(m => m.Disciplina != null && m.Disciplina.Id == disciplina.Id);
+            List<Teste> testesRelacionados = contexto.Testes.FindAll(t => t.Disciplina != null && t.Disciplina.Id == disciplina.Id);
 
-            if (materiasRelacionadas != null || materiasRelacionadas.Count > 0)
+            if (materiasRelacionadas.Count > 0)
             {
                 MessageBox.Show("Não é possível excluir a disciplina pois há matérias relacionadas.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (testesRelacionados.Count > 0)
+            {
+                MessageBox.Show("Não é possível excluir a disciplina pois há testes relacionados.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 

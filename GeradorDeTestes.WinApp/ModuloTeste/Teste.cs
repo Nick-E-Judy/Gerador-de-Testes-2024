@@ -13,6 +13,7 @@ namespace GeradorDeTestes.WinApp.ModuloTeste
         public Materia Materia { get; set; }
         public int QuantQuestoes { get; set; }
         public List<Questao> Questoes { get; set; }
+        public Questao Questao { get; set; }
 
         public Teste() { }
 

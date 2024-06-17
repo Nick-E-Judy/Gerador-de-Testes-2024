@@ -57,8 +57,6 @@ namespace GeradorDeTestes.WinApp.ModuloMateria
 
             materia = new Materia(nome, disciplina, serie);
 
-            disciplina.AdicionarMateria(materia);
-
             List<string> erros = materia.Validar();
 
             if (erros.Count > 0)
@@ -66,6 +64,10 @@ namespace GeradorDeTestes.WinApp.ModuloMateria
                 TelaPrincipalForm.Instancia.AtualizarRodape(erros[0]);
 
                 DialogResult = DialogResult.None;
+            }
+            else
+            {
+                disciplina.AdicionarMateria(materia);
             }
         }
     }

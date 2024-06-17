@@ -20,7 +20,7 @@ namespace GeradorDeTestes.WinApp.ModuloTeste
             foreach (Teste c in testes) 
             {
                 string materiaOuRecuperacao = c.Materia != null ? c.Materia.Nome : "Recuperação";
-                grid.Rows.Add(c.Id, c.Titulo.ToTitleCase(), c.Disciplina.Nome, materiaOuRecuperacao, c.QuantQuestoes);
+                grid.Rows.Add(c.Id, c.Titulo.ToTitleCase(), c.Disciplina.Nome.ToTitleCase(), materiaOuRecuperacao.ToTitleCase(), c.QuantQuestoes);
             }
         }
 
