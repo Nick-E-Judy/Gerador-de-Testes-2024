@@ -7,5 +7,6 @@
         bool Excluir(int id);
         Materia SelecionarPorId(int idSelecionado);
         List<Materia> SelecionarTodos();
+        List<Materia> SelecionarPorDisciplina(int disciplinaId); // Novo método
     }
 }

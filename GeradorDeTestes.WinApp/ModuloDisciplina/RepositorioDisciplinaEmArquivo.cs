@@ -16,6 +16,14 @@ namespace GeradorDeTestes.WinApp.ModuloDisciplina
             return contexto.Disciplinas;
         }
 
+        public void AdicionarMaterias(Disciplina disciplinaSelecionada, List<Materia> materias)
+        {
+            foreach (Materia m in materias)
+                disciplinaSelecionada.AdicionarMateria(m);
+
+            contexto.Gravar();
+        }
+
         public override bool Excluir(int id)
         {
             Disciplina disciplina = SelecionarPorId(id);

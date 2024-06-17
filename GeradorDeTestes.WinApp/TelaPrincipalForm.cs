@@ -59,7 +59,7 @@ namespace GeradorDeTestes.WinApp
 
         private void testesMenuItem_Click(object sender, EventArgs e)
         {
-            controlador = new ControladorTeste(repositorioTeste, repositorioMateria, repositorioDisciplina);
+            controlador = new ControladorTeste(repositorioTeste, repositorioMateria, repositorioDisciplina, repositorioQuestao);
             ConfigurarTelaPrincipal(controlador);
         }
 
@@ -78,6 +78,11 @@ namespace GeradorDeTestes.WinApp
             controlador.Excluir();
         }
 
+        private void btnDuplicar_Click(object sender, EventArgs e)
+        {
+            if (controlador is IControladorDuplicar controladorDuplicar)
+                controladorDuplicar.Duplicar();
+        }
         private void ConfigurarTelaPrincipal(ControladorBase controladorSelecionado)
         {
             lblTipoCadastro.Text = "Cadastro de " + controladorSelecionado.TipoCadastro;
@@ -92,14 +97,22 @@ namespace GeradorDeTestes.WinApp
             btnAdicionar.Enabled = controladorSelecionado is ControladorBase;
             btnExcluir.Enabled = controladorSelecionado is ControladorBase;
 
+            btnDuplicar.Enabled = controladorSelecionado is IControladorDuplicar;
+
+            if (controladorSelecionado is IControladorDuplicar)
+                btnEditar.Enabled = false;
+
             ConfigurarToolTips(controladorSelecionado);
         }
 
         private void ConfigurarToolTips(ControladorBase controladorSelecionado)
         {
-            btnEditar.ToolTipText = controladorSelecionado.ToolTipAdicionar;
-            btnAdicionar.ToolTipText = controladorSelecionado.ToolTipEditar;
+            btnAdicionar.ToolTipText = controladorSelecionado.ToolTipAdicionar;
+            btnEditar.ToolTipText = controladorSelecionado.ToolTipEditar;
             btnExcluir.ToolTipText = controladorSelecionado.ToolTipExcluir;
+
+            if (controladorSelecionado is IControladorDuplicar controladorDuplicar)
+                btnDuplicar.ToolTipText = controladorDuplicar.ToolTipDuplicar;
         }
 
         private void ConfigurarListagem(ControladorBase controladorSelecionado)

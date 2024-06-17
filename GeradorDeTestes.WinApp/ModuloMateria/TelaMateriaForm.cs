@@ -57,6 +57,8 @@ namespace GeradorDeTestes.WinApp.ModuloMateria
 
             materia = new Materia(nome, disciplina, serie);
 
+            disciplina.AdicionarMateria(materia);
+
             List<string> erros = materia.Validar();
 
             if (erros.Count > 0)

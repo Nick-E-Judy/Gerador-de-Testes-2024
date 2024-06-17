@@ -31,5 +31,10 @@ namespace GeradorDeTestes.WinApp.ModuloQuestao
             return base.Excluir(id);
 
         }
+
+        public List<Questao> SelecionarPorMateria(int materiaId)
+        {
+            return contexto.Questoes.Where(q => q.Materia.Id == materiaId).ToList();
+        }
     }
 }

@@ -44,7 +44,7 @@ namespace GeradorDeTestes.WinApp.ModuloMateria
 
         public override string ToString()
         {
-            return Nome.ToTitleCase();
+            return $"{Nome.ToTitleCase()}, {Serie}ª série";
         }
     }
 }

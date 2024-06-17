@@ -9,5 +9,6 @@ namespace GeradorDeTestes.WinApp.ModuloQuestao
         bool Excluir(int id);
         Questao SelecionarPorId(int idSelecionado);
         List<Questao> SelecionarTodos();
+        List<Questao> SelecionarPorMateria(int materiaId);
     }
 }

@@ -1,4 +1,5 @@
 ﻿using GeradorDeTestes.WinApp.Compartilhado;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace GeradorDeTestes.WinApp.ModuloTeste
 {
@@ -16,9 +17,11 @@ namespace GeradorDeTestes.WinApp.ModuloTeste
         public void AtualizarRegistros(List<Teste> testes)
         {
             grid.Rows.Clear();
-
-            foreach (Teste c in testes)
-                grid.Rows.Add(c.Id, c.Titulo.ToTitleCase(), c.Disciplina.Nome, c.Materia.Nome, c.QuantQuestoes);
+            foreach (Teste c in testes) 
+            {
+                string materiaOuRecuperacao = c.Materia != null ? c.Materia.Nome : "Recuperação";
+                grid.Rows.Add(c.Id, c.Titulo.ToTitleCase(), c.Disciplina.Nome, materiaOuRecuperacao, c.QuantQuestoes);
+            }
         }
 
         public int ObterRegistroSelecionado()

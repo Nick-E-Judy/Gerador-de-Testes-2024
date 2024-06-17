@@ -51,9 +51,10 @@
             // txtId
             // 
             txtId.Enabled = false;
-            txtId.Location = new Point(126, 61);
+            txtId.Location = new Point(110, 46);
+            txtId.Margin = new Padding(3, 2, 3, 2);
             txtId.Name = "txtId";
-            txtId.Size = new Size(110, 27);
+            txtId.Size = new Size(97, 23);
             txtId.TabIndex = 24;
             txtId.Text = "0";
             // 
@@ -61,9 +62,9 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 11.25F);
-            label4.Location = new Point(88, 61);
+            label4.Location = new Point(77, 46);
             label4.Name = "label4";
-            label4.Size = new Size(32, 25);
+            label4.Size = new Size(25, 20);
             label4.TabIndex = 23;
             label4.Text = "Id:";
             // 
@@ -71,10 +72,9 @@
             // 
             btnGravar.DialogResult = DialogResult.OK;
             btnGravar.Font = new Font("Segoe UI", 11.25F);
-            btnGravar.Location = new Point(325, 639);
-            btnGravar.Margin = new Padding(3, 4, 3, 4);
+            btnGravar.Location = new Point(284, 479);
             btnGravar.Name = "btnGravar";
-            btnGravar.Size = new Size(114, 35);
+            btnGravar.Size = new Size(100, 26);
             btnGravar.TabIndex = 22;
             btnGravar.Text = "Gravar";
             btnGravar.UseVisualStyleBackColor = true;
@@ -84,10 +84,9 @@
             // 
             btnCancelar.DialogResult = DialogResult.Cancel;
             btnCancelar.Font = new Font("Segoe UI", 11.25F);
-            btnCancelar.Location = new Point(446, 639);
-            btnCancelar.Margin = new Padding(3, 4, 3, 4);
+            btnCancelar.Location = new Point(390, 479);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(114, 35);
+            btnCancelar.Size = new Size(100, 26);
             btnCancelar.TabIndex = 21;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
@@ -96,18 +95,19 @@
             // 
             cmbMateria.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbMateria.FormattingEnabled = true;
-            cmbMateria.Location = new Point(126, 216);
+            cmbMateria.Location = new Point(110, 162);
+            cmbMateria.Margin = new Padding(3, 2, 3, 2);
             cmbMateria.Name = "cmbMateria";
-            cmbMateria.Size = new Size(206, 28);
+            cmbMateria.Size = new Size(181, 23);
             cmbMateria.TabIndex = 16;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 11.25F);
-            label3.Location = new Point(24, 160);
+            label3.Location = new Point(21, 120);
             label3.Name = "label3";
-            label3.Size = new Size(103, 25);
+            label3.Size = new Size(81, 20);
             label3.TabIndex = 15;
             label3.Text = "Disciplina: ";
             // 
@@ -115,9 +115,9 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 11.25F);
-            label2.Location = new Point(51, 110);
+            label2.Location = new Point(45, 82);
             label2.Name = "label2";
-            label2.Size = new Size(69, 25);
+            label2.Size = new Size(54, 20);
             label2.TabIndex = 14;
             label2.Text = "Titulo: ";
             // 
@@ -125,35 +125,38 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 11.25F);
-            label1.Location = new Point(34, 215);
+            label1.Location = new Point(30, 161);
             label1.Name = "label1";
-            label1.Size = new Size(86, 25);
+            label1.Size = new Size(67, 20);
             label1.TabIndex = 13;
             label1.Text = "Matéria: ";
             // 
             // txtTitulo
             // 
-            txtTitulo.Location = new Point(126, 111);
+            txtTitulo.Location = new Point(110, 83);
+            txtTitulo.Margin = new Padding(3, 2, 3, 2);
             txtTitulo.Name = "txtTitulo";
-            txtTitulo.Size = new Size(434, 27);
+            txtTitulo.Size = new Size(380, 23);
             txtTitulo.TabIndex = 25;
             // 
             // cmbDisciplina
             // 
             cmbDisciplina.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbDisciplina.FormattingEnabled = true;
-            cmbDisciplina.Location = new Point(126, 161);
+            cmbDisciplina.Location = new Point(110, 121);
+            cmbDisciplina.Margin = new Padding(3, 2, 3, 2);
             cmbDisciplina.Name = "cmbDisciplina";
-            cmbDisciplina.Size = new Size(206, 28);
+            cmbDisciplina.Size = new Size(181, 23);
             cmbDisciplina.TabIndex = 26;
+            cmbDisciplina.SelectedIndexChanged += cmbDisciplina_SelectedIndexChanged;
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 11.25F);
-            label5.Location = new Point(342, 160);
+            label5.Location = new Point(299, 120);
             label5.Name = "label5";
-            label5.Size = new Size(139, 25);
+            label5.Size = new Size(109, 20);
             label5.TabIndex = 28;
             label5.Text = "Qtd. Questões: ";
             // 
@@ -161,58 +164,63 @@
             // 
             checkBoxRecuperacao.AutoSize = true;
             checkBoxRecuperacao.Font = new Font("Segoe UI", 11.25F);
-            checkBoxRecuperacao.Location = new Point(345, 214);
+            checkBoxRecuperacao.Location = new Point(302, 160);
+            checkBoxRecuperacao.Margin = new Padding(3, 2, 3, 2);
             checkBoxRecuperacao.Name = "checkBoxRecuperacao";
-            checkBoxRecuperacao.Size = new Size(221, 29);
+            checkBoxRecuperacao.Size = new Size(176, 24);
             checkBoxRecuperacao.TabIndex = 29;
             checkBoxRecuperacao.Text = "Prova de Recuperação";
             checkBoxRecuperacao.UseVisualStyleBackColor = true;
+            checkBoxRecuperacao.CheckedChanged += checkBoxRecuperacao_CheckedChanged;
             // 
             // groupBox1
             // 
             groupBox1.Controls.Add(btnSortear);
             groupBox1.Controls.Add(listQuestoes);
             groupBox1.Font = new Font("Segoe UI", 11.25F);
-            groupBox1.Location = new Point(51, 270);
+            groupBox1.Location = new Point(45, 202);
+            groupBox1.Margin = new Padding(3, 2, 3, 2);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(509, 348);
+            groupBox1.Padding = new Padding(3, 2, 3, 2);
+            groupBox1.Size = new Size(445, 261);
             groupBox1.TabIndex = 30;
             groupBox1.TabStop = false;
             groupBox1.Text = "Questões Selecionadas";
             // 
             // btnSortear
             // 
-            btnSortear.DialogResult = DialogResult.OK;
             btnSortear.Font = new Font("Segoe UI", 11.25F);
-            btnSortear.Location = new Point(19, 32);
-            btnSortear.Margin = new Padding(3, 4, 3, 4);
+            btnSortear.Location = new Point(17, 24);
             btnSortear.Name = "btnSortear";
-            btnSortear.Size = new Size(166, 35);
+            btnSortear.Size = new Size(145, 26);
             btnSortear.TabIndex = 31;
             btnSortear.Text = "Sortear Questões";
             btnSortear.UseVisualStyleBackColor = true;
+            btnSortear.Click += btnSortear_Click;
             // 
             // listQuestoes
             // 
             listQuestoes.FormattingEnabled = true;
-            listQuestoes.ItemHeight = 25;
-            listQuestoes.Location = new Point(6, 88);
+            listQuestoes.ItemHeight = 20;
+            listQuestoes.Location = new Point(5, 66);
+            listQuestoes.Margin = new Padding(3, 2, 3, 2);
             listQuestoes.Name = "listQuestoes";
-            listQuestoes.Size = new Size(497, 254);
+            listQuestoes.Size = new Size(435, 184);
             listQuestoes.TabIndex = 0;
             // 
             // numQtdQuestoes
             // 
-            numQtdQuestoes.Location = new Point(478, 162);
+            numQtdQuestoes.Location = new Point(418, 122);
+            numQtdQuestoes.Margin = new Padding(3, 2, 3, 2);
             numQtdQuestoes.Name = "numQtdQuestoes";
-            numQtdQuestoes.Size = new Size(82, 27);
+            numQtdQuestoes.Size = new Size(72, 23);
             numQtdQuestoes.TabIndex = 31;
             // 
             // TelaTesteForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(609, 687);
+            ClientSize = new Size(533, 515);
             Controls.Add(numQtdQuestoes);
             Controls.Add(groupBox1);
             Controls.Add(checkBoxRecuperacao);
@@ -227,6 +235,7 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "TelaTesteForm";
             StartPosition = FormStartPosition.CenterParent;
             Text = "Cadastro de Teste";

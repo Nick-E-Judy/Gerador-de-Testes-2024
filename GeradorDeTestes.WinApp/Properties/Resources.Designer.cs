@@ -103,6 +103,26 @@ namespace GeradorDeTestes.WinApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap btnDuplicar {
+            get {
+                object obj = ResourceManager.GetObject("btnDuplicar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap btnDuplicar1 {
+            get {
+                object obj = ResourceManager.GetObject("btnDuplicar1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap btnEditar {
             get {
                 object obj = ResourceManager.GetObject("btnEditar", resourceCulture);
@@ -126,6 +146,16 @@ namespace GeradorDeTestes.WinApp.Properties {
         internal static System.Drawing.Bitmap btnFiltrar {
             get {
                 object obj = ResourceManager.GetObject("btnFiltrar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap btnPDF {
+            get {
+                object obj = ResourceManager.GetObject("btnPDF", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -10,5 +10,9 @@ namespace GeradorDeTestes.WinApp.ModuloMateria
 {
     public class RepositorioMateriaEmMemoria : RepositorioBaseEmMemoria<Materia>, IRepositorioMateria
     {
+        public List<Materia> SelecionarPorDisciplina(int disciplinaId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
