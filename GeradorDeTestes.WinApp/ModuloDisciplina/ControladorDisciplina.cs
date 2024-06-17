@@ -40,12 +40,9 @@ namespace GeradorDeTestes.WinApp.ModuloDisciplina
             {
                 if (disciplina.Nome.ToLower() == novaDisciplina.Nome.ToLower())
                 {
-                    MessageBox.Show(
-                        "Já existe uma disciplina com este nome.",
-                        "Erro de Validação",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning
-                    );
+                    TelaPrincipalForm
+                        .Instancia
+                        .AtualizarRodape($"Já existe uma disciplina com este nome");
                     return;
                 }
             }
@@ -67,12 +64,9 @@ namespace GeradorDeTestes.WinApp.ModuloDisciplina
 
             if (disciplinaSelecionada == null)
             {
-                MessageBox.Show(
-                    "Não é possível realizar esta ação sem um registro selecionado.",
-                    "Aviso",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning
-                );
+                TelaPrincipalForm
+                    .Instancia
+                    .AtualizarRodape($"Não é possível realizar esta ação sem um registro selecionado.");
                 return;
             }
 
@@ -92,12 +86,9 @@ namespace GeradorDeTestes.WinApp.ModuloDisciplina
             {
                 if (disciplina.Nome.ToLower() == disciplinaEditada.Nome.ToLower() && disciplina.Id != disciplinaSelecionada.Id)
                 {
-                    MessageBox.Show(
-                        "Já existe uma disciplina com este nome.",
-                        "Erro de Validação",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning
-                    );
+                    TelaPrincipalForm
+                        .Instancia
+                        .AtualizarRodape($"Já existe uma disciplina com este nome.");
                     return;
                 }
             }
@@ -119,12 +110,9 @@ namespace GeradorDeTestes.WinApp.ModuloDisciplina
 
             if (disciplinaSelecionada == null)
             {
-                MessageBox.Show(
-                    "Não é possível realizar esta ação sem um registro selecionado.",
-                    "Aviso",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning
-                );
+                TelaPrincipalForm
+                    .Instancia
+                    .AtualizarRodape($"Não é possível realizar esta ação sem um registro selecionado");
                 return;
             }
             

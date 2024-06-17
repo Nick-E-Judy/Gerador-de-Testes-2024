@@ -57,12 +57,10 @@ namespace GeradorDeTestes.WinApp.ModuloTeste
             {
                 if (teste.Titulo.ToLower() == novoTeste.Titulo.ToLower())
                 {
-                    MessageBox.Show(
-                        "Já existe um teste com este nome.",
-                        "Erro de Validação",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning
-                    );
+                    
+                    TelaPrincipalForm
+                        .Instancia
+                        .AtualizarRodape($"Já existe um teste com este nome.");
                     return;
                 }
             }
@@ -89,12 +87,9 @@ namespace GeradorDeTestes.WinApp.ModuloTeste
 
             if (testeSelecionado == null)
             {
-                MessageBox.Show(
-                    "Não é possível realizar esta ação sem um registro selecionado.",
-                    "Aviso",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning
-                );
+                    TelaPrincipalForm
+                        .Instancia
+                        .AtualizarRodape($"Não é possível realizar esta ação sem um registro selecionado.");
                 return;
             }
 
@@ -125,11 +120,9 @@ namespace GeradorDeTestes.WinApp.ModuloTeste
 
             if (testeSelecionado == null)
             {
-                MessageBox.Show(
-                    "Não é possível realizar esta ação sem um registro selecionado.",
-                    "Aviso",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning
+                TelaPrincipalForm
+                    .Instancia
+                    .AtualizarRodape($"Não é possível realizar esta ação sem um registro selecionado.");
                 );
                 return;
             }
@@ -151,12 +144,9 @@ namespace GeradorDeTestes.WinApp.ModuloTeste
             {
                 if (teste.Titulo.ToLower() == testeEditado.Titulo.ToLower())
                 {
-                    MessageBox.Show(
-                        "Já existe um teste com este nome.",
-                        "Erro de Validação",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning
-                    );
+                    TelaPrincipalForm
+                        .Instancia
+                        .AtualizarRodape($"Já existe um teste com este nome");
                     return;
                 }
             }
@@ -179,12 +169,9 @@ namespace GeradorDeTestes.WinApp.ModuloTeste
 
             if (testeSelecionado == null)
             {
-                MessageBox.Show(
-                    "Não é possível realizar esta ação sem um registro selecionado.",
-                    "Aviso",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning
-                );
+                TelaPrincipalForm
+                    .Instancia
+                    .AtualizarRodape($"Não é possível realizar esta ação sem um registro selecionado.");
                 return;
             }
 
@@ -200,12 +187,10 @@ namespace GeradorDeTestes.WinApp.ModuloTeste
 
             if (testeSelecionado == null)
             {
-                MessageBox.Show(
-                    "Não é possível realizar esta ação sem um registro selecionado.",
-                    "Aviso",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning
-                );
+
+                TelaPrincipalForm
+                    .Instancia
+                    .AtualizarRodape($"Não é possível realizar esta ação sem um registro selecionado.");
                 return;
             }
 
@@ -237,7 +222,5 @@ namespace GeradorDeTestes.WinApp.ModuloTeste
 
             return tabelaTeste;
         }
-
-   
     }
 }

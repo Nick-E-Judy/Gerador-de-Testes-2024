@@ -32,7 +32,9 @@ namespace GeradorDeTestes.WinApp.ModuloDisciplina
 
             if (materiasRelacionadas != null || materiasRelacionadas.Count > 0)
             {
-                MessageBox.Show("Não é possível excluir a disciplina pois há matérias relacionadas.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                TelaPrincipalForm
+                    .Instancia
+                    .AtualizarRodape($"Não é possível excluir a disciplina pois há matérias relacionadas.");
                 return false;
             }
 
