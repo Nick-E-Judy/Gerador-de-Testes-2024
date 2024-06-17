@@ -32,6 +32,10 @@ namespace GeradorDeTestes.WinApp.ModuloTeste
 
         public string ToolTipDuplicar { get { return "Duplicar um teste"; } }
 
+        public string ToolTipVisualizar { get { return "Visualizar um teste"; } }
+
+        public string ToolTipGerarTeste => throw new NotImplementedException();
+
         public override void Adicionar()
         {
             TelaTesteForm telaTeste = new TelaTesteForm(repositorioMateria, repositorioQuestao);
@@ -166,6 +170,37 @@ namespace GeradorDeTestes.WinApp.ModuloTeste
                 .AtualizarRodape($"O registro \"{testeEditado.Titulo}\" foi editado com sucesso!");
         }
 
+        public void Visualizar()
+        {
+            int idSelecionado = tabelaTeste.ObterRegistroSelecionado();
+
+            Teste testeSelecionado =
+                repositorioTeste.SelecionarPorId(idSelecionado);
+
+            if (testeSelecionado == null)
+            {
+                MessageBox.Show(
+                    "Não é possível realizar esta ação sem um registro selecionado.",
+                    "Aviso",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+                return;
+            }
+
+            TelaVisualizarTesteForm tela = new TelaVisualizarTesteForm(testeSelecionado);
+
+            tela.ShowDialog();
+        }
+        public void GerarTeste()
+        {
+            int idSelecionado = tabelaTeste.ObterRegistroSelecionado();
+
+            Teste testeSelecionado =
+                repositorioTeste.SelecionarPorId(idSelecionado);
+
+        }
+
         private void CarregarTestes()
         {
             List<Teste> testes = repositorioTeste.SelecionarTodos();
@@ -182,5 +217,7 @@ namespace GeradorDeTestes.WinApp.ModuloTeste
 
             return tabelaTeste;
         }
+
+   
     }
 }

@@ -4,6 +4,7 @@ using GeradorDeTestes.WinApp.ModuloMateria;
 using GeradorDeTestes.WinApp.ModuloQuestao;
 using GeradorDeTestes.WinApp.ModuloTeste;
 
+
 namespace GeradorDeTestes.WinApp
 {
     public partial class TelaPrincipalForm : Form
@@ -83,6 +84,18 @@ namespace GeradorDeTestes.WinApp
             if (controlador is IControladorDuplicar controladorDuplicar)
                 controladorDuplicar.Duplicar();
         }
+
+        private void btnVisualizar_Click(object sender, EventArgs e)
+        {
+            if (controlador is IControladorDuplicar controladorVisualizar)
+                controladorVisualizar.Visualizar();
+        }
+        private void btnPDF_Click(object sender, EventArgs e)
+        {
+            if (controlador is IControladorDuplicar controladorGerarTeste)
+                controladorGerarTeste.GerarTeste();
+       
+        }
         private void ConfigurarTelaPrincipal(ControladorBase controladorSelecionado)
         {
             lblTipoCadastro.Text = "Cadastro de " + controladorSelecionado.TipoCadastro;
@@ -98,6 +111,8 @@ namespace GeradorDeTestes.WinApp
             btnExcluir.Enabled = controladorSelecionado is ControladorBase;
 
             btnDuplicar.Enabled = controladorSelecionado is IControladorDuplicar;
+            btnVisualizar.Enabled = controladorSelecionado is IControladorDuplicar;
+            btnPDF.Enabled = controladorSelecionado is IControladorDuplicar;
 
             if (controladorSelecionado is IControladorDuplicar)
                 btnEditar.Enabled = false;
@@ -112,7 +127,12 @@ namespace GeradorDeTestes.WinApp
             btnExcluir.ToolTipText = controladorSelecionado.ToolTipExcluir;
 
             if (controladorSelecionado is IControladorDuplicar controladorDuplicar)
+            {
                 btnDuplicar.ToolTipText = controladorDuplicar.ToolTipDuplicar;
+                btnVisualizar.ToolTipText = controladorDuplicar.ToolTipVisualizar;
+                btnPDF.ToolTipText = controladorDuplicar.ToolTipVisualizar;
+            }
+
         }
 
         private void ConfigurarListagem(ControladorBase controladorSelecionado)
@@ -123,5 +143,7 @@ namespace GeradorDeTestes.WinApp
             pnlRegistros.Controls.Clear();
             pnlRegistros.Controls.Add(listagemContato);
         }
+
+     
     }
 }
