@@ -58,7 +58,7 @@ namespace GeradorDeTestes.WinApp.ModuloTeste
 
         private void btnGravar_Click(object sender, EventArgs e)
         {
-            string titulo = txtTitulo.Text;
+            string titulo = txtTitulo.Text.Trim();
             Disciplina disciplina = (Disciplina)cmbDisciplina.SelectedItem;
             Materia materia = (Materia)cmbMateria.SelectedItem;
             int qtdQuestoes = Convert.ToInt32(numQtdQuestoes.Text);

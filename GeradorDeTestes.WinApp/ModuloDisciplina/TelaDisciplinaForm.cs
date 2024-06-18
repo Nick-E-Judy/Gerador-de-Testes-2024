@@ -24,7 +24,7 @@
 
         private void btnGravar_Click(object sender, EventArgs e)
         {
-            string nome = txtNome.Text;
+            string nome = txtNome.Text.Trim();
 
             disciplina = new Disciplina(nome);
 

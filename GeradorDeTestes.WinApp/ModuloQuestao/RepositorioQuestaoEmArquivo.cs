@@ -22,7 +22,7 @@ namespace GeradorDeTestes.WinApp.ModuloQuestao
         {
             Questao questao = SelecionarPorId(id);
 
-            List<Teste> testesRelacionados = contexto.Testes.FindAll(t => t.Questao != null && t.Questao.Id == questao.Id);
+            List<Teste> testesRelacionados = contexto.Testes.FindAll(t => t.Questoes.Contains(questao));
 
             if (testesRelacionados.Count > 0)
             {

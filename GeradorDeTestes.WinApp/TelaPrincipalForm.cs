@@ -130,7 +130,7 @@ namespace GeradorDeTestes.WinApp
             {
                 btnDuplicar.ToolTipText = controladorDuplicar.ToolTipDuplicar;
                 btnVisualizar.ToolTipText = controladorDuplicar.ToolTipVisualizar;
-                btnPDF.ToolTipText = controladorDuplicar.ToolTipVisualizar;
+                btnPDF.ToolTipText = controladorDuplicar.ToolTipGerarTeste;
             }
 
         }

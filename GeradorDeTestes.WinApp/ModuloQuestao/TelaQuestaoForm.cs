@@ -42,7 +42,7 @@ namespace GeradorDeTestes.WinApp.ModuloQuestao
 
         private void btnGravar_Click(object sender, EventArgs e)
         {
-            string enunciado = txtEnunciado.Text;
+            string enunciado = txtEnunciado.Text.Trim();
             Materia materia = (Materia)cmbMateria.SelectedItem;
             foreach (Alternativa alternativa in listAlternativas.Items)
             {

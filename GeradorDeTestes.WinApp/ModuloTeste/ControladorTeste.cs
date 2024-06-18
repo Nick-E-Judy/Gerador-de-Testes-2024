@@ -34,7 +34,7 @@ namespace GeradorDeTestes.WinApp.ModuloTeste
 
         public string ToolTipVisualizar { get { return "Visualizar um teste"; } }
 
-        public string ToolTipGerarTeste => throw new NotImplementedException();
+        public string ToolTipGerarTeste { get { return "Gerar um teste"; } }
 
         public override void Adicionar()
         {
