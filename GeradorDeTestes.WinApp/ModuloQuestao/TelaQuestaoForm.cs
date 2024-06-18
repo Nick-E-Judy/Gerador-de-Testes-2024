@@ -11,9 +11,11 @@ namespace GeradorDeTestes.WinApp.ModuloQuestao
         {
             set
             {
+                questao = value;
                 txtId.Text = value.Id.ToString();
                 txtEnunciado.Text = value.Enunciado;
                 cmbMateria.SelectedItem = value.Materia;
+                CarregarAlternativas(value.Alternativas);
             }
             get
             {
@@ -32,12 +34,31 @@ namespace GeradorDeTestes.WinApp.ModuloQuestao
         {
             InitializeComponent();
         }
+
         public void CarregarMaterias(List<Materia> materias)
         {
             cmbMateria.Items.Clear();
 
             foreach (Materia m in materias)
-                cmbMateria.Items.Add(m);
+                cmbMateria.Items.Add(m); 
+            if (questao != null)
+                cmbMateria.SelectedItem = questao.Materia;
+        }
+        private void CarregarAlternativas(List<Alternativa> alternativas)
+        {
+            listAlternativas.Items.Clear();
+            proximaLetra = 'A'; // Resetar para a próxima letra inicial
+
+            foreach (Alternativa alternativa in alternativas)
+            {
+                listAlternativas.Items.Add(alternativa);
+                if (alternativa.Correto)
+                {
+                    int index = listAlternativas.Items.IndexOf(alternativa);
+                    listAlternativas.SetItemChecked(index, true);
+                }
+                proximaLetra = (char)(proximaLetra + 1); // Atualizar a próxima letra
+            }
         }
 
         private void btnGravar_Click(object sender, EventArgs e)

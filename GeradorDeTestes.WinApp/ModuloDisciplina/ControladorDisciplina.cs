@@ -126,7 +126,15 @@ namespace GeradorDeTestes.WinApp.ModuloDisciplina
             if (resposta != DialogResult.Yes)
                 return;
 
-            repositorioDisciplina.Excluir(disciplinaSelecionada.Id);
+            bool conseguiuExcluir = repositorioDisciplina.Excluir(disciplinaSelecionada.Id);
+
+            if (!conseguiuExcluir)
+            {
+                TelaPrincipalForm
+                    .Instancia
+                    .AtualizarRodape($"Não é possível excluir a disciplina pois há matérias relacionadas.");
+                return;
+            }
 
             CarregarDisciplinas();
 

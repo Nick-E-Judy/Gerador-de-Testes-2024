@@ -136,7 +136,15 @@ namespace GeradorDeTestes.WinApp.ModuloQuestao
             if (resposta != DialogResult.Yes)
                 return;
 
-            repositorioQuestao.Excluir(questaoSelecionada.Id);
+            bool conseguiuEcluir = repositorioQuestao.Excluir(questaoSelecionada.Id);
+
+            if (!conseguiuEcluir)
+            {
+                TelaPrincipalForm
+                    .Instancia
+                    .AtualizarRodape("Não é possível excluir a questao pois há testes relacionados.");
+                return;
+            }
 
             CarregarQuestoes();
 

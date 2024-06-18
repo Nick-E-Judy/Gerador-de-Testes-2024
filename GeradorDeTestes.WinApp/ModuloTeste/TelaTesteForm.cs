@@ -141,6 +141,7 @@ namespace GeradorDeTestes.WinApp.ModuloTeste
             if (checkBoxRecuperacao.Checked) 
             { 
                 cmbMateria.Enabled = false;
+                cmbMateria.SelectedIndex = -1;
             }
             else
                 cmbMateria.Enabled = true;

@@ -25,10 +25,7 @@ namespace GeradorDeTestes.WinApp.ModuloQuestao
             List<Teste> testesRelacionados = contexto.Testes.FindAll(t => t.Questoes.Contains(questao));
 
             if (testesRelacionados.Count > 0)
-            {
-                MessageBox.Show("Não é possível excluir a questao pois há testes relacionados.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
+                 return false;
 
             return base.Excluir(id);
 

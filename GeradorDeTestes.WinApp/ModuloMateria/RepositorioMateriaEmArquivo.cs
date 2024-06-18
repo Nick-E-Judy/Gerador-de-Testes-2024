@@ -28,12 +28,7 @@ namespace GeradorDeTestes.WinApp.ModuloMateria
             List<Questao> questoesRelacionadas = contexto.Questoes.FindAll(m => m.Materia != null && m.Materia.Id == questao.Id);
 
             if (questoesRelacionadas.Count > 0)
-            {
-                TelaPrincipalForm
-                    .Instancia
-                    .AtualizarRodape($"Não é possível excluir a matéria pois há questões relacionadas.");
                 return false;
-            }
 
             return base.Excluir(id);
         }

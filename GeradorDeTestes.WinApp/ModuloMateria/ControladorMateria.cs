@@ -119,7 +119,15 @@ namespace GeradorDeTestes.WinApp.ModuloMateria
             if (resposta != DialogResult.Yes)
                 return;
 
-            repositorioMateria.Excluir(materiaSelecionada.Id);
+            bool conseguiuExcluir = repositorioMateria.Excluir(materiaSelecionada.Id);
+
+            if (!conseguiuExcluir)
+            {
+                TelaPrincipalForm
+                    .Instancia
+                    .AtualizarRodape($"Não é possível excluir a matéria pois há questões relacionadas.");
+                return;
+            }
 
             CarregarMaterias();
 

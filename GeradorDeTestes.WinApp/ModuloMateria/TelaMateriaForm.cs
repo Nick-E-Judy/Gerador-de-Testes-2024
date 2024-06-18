@@ -19,8 +19,14 @@ namespace GeradorDeTestes.WinApp.ModuloMateria
         {
             set
             {
+                materia = value;
                 txtId.Text = value.Id.ToString();
                 txtNome.Text = value.Nome;
+                cbDisciplina.SelectedItem = value.Disciplina;
+                if (value.Serie == 1)
+                    rb1Serie.Checked = true;
+                if (value.Serie == 2)
+                    rb2Serie.Checked = true;
             }
             get
             {
@@ -39,6 +45,9 @@ namespace GeradorDeTestes.WinApp.ModuloMateria
 
             foreach (Disciplina d in disciplinas)
                 cbDisciplina.Items.Add(d);
+
+            if (materia != null)
+                cbDisciplina.SelectedItem = materia.Disciplina;
         }
 
         private void btnGravar_Click(object sender, EventArgs e)
