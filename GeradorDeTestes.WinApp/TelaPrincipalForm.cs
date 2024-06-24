@@ -30,6 +30,7 @@ namespace GeradorDeTestes.WinApp
             contexto = new ContextoDados(carregarDados: true);
 
             repositorioDisciplina = new RepositorioDisciplinaEmArquivo(contexto);
+            repositorioDisciplina = new RepositorioDisciplinaEmSql();
             repositorioMateria = new RepositorioMateriaEmArquivo(contexto);
             repositorioQuestao = new RepositorioQuestaoEmArquivo(contexto);
             repositorioTeste = new RepositorioTesteEmArquivo(contexto);
