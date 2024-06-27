@@ -18,7 +18,7 @@ namespace GeradorDeTestes.WinApp.ModuloMateria
             grid.Rows.Clear();
 
             foreach (Materia m in materias)
-                grid.Rows.Add(m.Id, m.Nome.ToTitleCase(), m.Disciplina, m.Serie);
+                grid.Rows.Add(m.Id, m.Nome.ToTitleCase(), m.Disciplina.ToString(), m.Serie);
         }
 
         public int ObterRegistroSelecionado()

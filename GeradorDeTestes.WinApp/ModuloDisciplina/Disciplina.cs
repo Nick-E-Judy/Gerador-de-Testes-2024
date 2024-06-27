@@ -7,7 +7,10 @@ namespace GeradorDeTestes.WinApp.ModuloDisciplina
     {
         public string Nome { get; set; }
         public List<Materia> Materias { get; set; }
-        public Disciplina() { }
+        public Disciplina()
+        {
+            Materias = new List<Materia>();
+        }
         public Disciplina(string nome)
         {
             Nome = nome;
